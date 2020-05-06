@@ -16,3 +16,4 @@ const phone: any = 'Pixel';
 const tablet: any = 3;
 // never
 // const homes: never = 3;
+const homes: any = 3;
