@@ -19,8 +19,36 @@ const tablet: any = 3;
 const homes: any = 3;
 
 // Functions in TypeScript
-const sayWord = (word: string): string => {
-  console.log(word);
+
+// 1)
+// const sayWord = (word: string): string => {
+//   console.log(word);
+//   return word;
+// };
+// sayWord('Mike');
+
+// 2)
+// add "?" to set parameter as optional
+
+// const sayWord = (word?: string): string => {
+//   console.log(word || 'Hello');
+//   return word || 'Hello';
+// };
+// sayWord();
+
+//3)
+// you can also set a default value
+// in that case you don't have to specify the type
+// const sayWord = (word = 'Hello'): string => {
+//   console.log(word);
+//   return word;
+// };
+// sayWord();
+
+// 4)
+// you can also use rest parameters
+const sayWord = (word = 'Hello', ...otherStuff: string[]): string => {
+  console.log(otherStuff);
   return word;
 };
-sayWord('Mike');
+sayWord('Mike', 'Basia', 'Kasia');

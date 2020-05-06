@@ -125,11 +125,41 @@ var tablet = 3;
 // const homes: never = 3;
 var homes = 3;
 // Functions in TypeScript
+// 1)
+// const sayWord = (word: string): string => {
+//   console.log(word);
+//   return word;
+// };
+// sayWord('Mike');
+// 2)
+// add "?" to set parameter as optional
+// const sayWord = (word?: string): string => {
+//   console.log(word || 'Hello');
+//   return word || 'Hello';
+// };
+// sayWord();
+//3)
+// you can also set a default value
+// in that case you don't have to specify the type
+// const sayWord = (word = 'Hello'): string => {
+//   console.log(word);
+//   return word;
+// };
+// sayWord();
+// 4)
+// you can also use rest parameters
 var sayWord = function sayWord(word) {
-    console.log(word);
+    if (word === void 0) {
+        word = 'Hello';
+    }
+    var otherStuff = [];
+    for (var _i = 1; _i < arguments.length; _i++) {
+        otherStuff[_i - 1] = arguments[_i];
+    }
+    console.log(otherStuff);
     return word;
 };
-sayWord('Mike');
+sayWord('Mike', 'Basia', 'Kasia');
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -159,7 +189,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '54699' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52778' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
