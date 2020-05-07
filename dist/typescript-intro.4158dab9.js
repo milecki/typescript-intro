@@ -124,68 +124,27 @@ var tablet = 3;
 // never
 // const homes: never = 3;
 var homes = 3;
-// Functions in TypeScript
-// 1)
-// const sayWord = (word: string): string => {
-//   console.log(word);
-//   return word;
-// };
-// sayWord('Mike');
-// 2)
-// add "?" to set parameter as optional
-// const sayWord = (word?: string): string => {
-//   console.log(word || 'Hello');
-//   return word || 'Hello';
-// };
-// sayWord();
-//3)
-// you can also set a default value
-// in that case you don't have to specify the type
-// const sayWord = (word = 'Hello'): string => {
-//   console.log(word);
-//   return word;
-// };
-// sayWord();
-// 4)
-// you can also use rest parameters
-// const sayWord = (word = 'Hello', ...otherStuff: string[]): string => {
-//   console.log(otherStuff);
-//   return word;
-// };
-// sayWord('Mike', 'Lisa', 'Danny');
-// Implicit Types in TS
-// let newName = 'Mark';
-// newName = 'Johnny';
-// newName = 10;
-// console.log(newName);
-// Gets type from initial declaration
-// let newNameTwo = newName;
-// newNameTwo = 10;
-// union types (with |)
-// the type here is one of three - string, number or boolean
-// let newName: string | number | boolean = 'Mark';
-// newName = 'Johnny';
-// newName = 10;
-// newName = false;
-// console.log(newName);
-// let newNameTwo = newName;
-// newNameTwo = 39;
-// console.log(newNameTwo);
-// union types in functions
-var makeMargin = function makeMargin(x) {
-    return "margin: " + x + "px;";
+var sayName = function sayName(_a) {
+    var name = _a.name,
+        age = _a.age;
+    console.log(name);
+    return name;
 };
-makeMargin(10);
-makeMargin('Miao');
-// makeMargin(true);
-// Null types (and undefined are automatically added to your standard types)
-var dog;
-dog = null;
-console.log('dog', dog);
-dog = 'Lucie';
-dog = undefined;
-dog = 10;
-dog = false;
+// const sayName = ({ name, age }: Person): Person => {
+//   console.log(name);
+//   return { name, age };
+// };
+sayName({
+    name: 'Mike',
+    age: 32
+});
+sayName({
+    age: 32,
+    name: 'Mike'
+});
+sayName({
+    name: 'Mike'
+});
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -215,7 +174,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57130' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61610' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

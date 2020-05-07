@@ -77,19 +77,48 @@ const homes: any = 3;
 // console.log(newNameTwo);
 
 // union types in functions
-const makeMargin = (x: string | number): string => {
-  return `margin: ${x}px;`;
-};
+// const makeMargin = (x: string | number): string => {
+//   return `margin: ${x}px;`;
+// };
 
-makeMargin(10);
-makeMargin('Miao');
+// makeMargin(10);
+// makeMargin('Miao');
 // makeMargin(true);
 
 // Null types (and undefined are automatically added to your standard types)
-let dog: string;
-dog = null;
-console.log('dog', dog);
-dog = 'Lucie';
-dog = undefined;
-dog = 10;
-dog = false;
+// let dog: string;
+// dog = null;
+// console.log('dog', dog);
+// dog = 'Lucie';
+// dog = undefined;
+// dog = 10;
+// dog = false;
+
+// Interfaces
+interface Person {
+  name: string;
+  age?: number; // optional param
+}
+const sayName = ({ name, age }: Person): string => {
+  console.log(name);
+  return name;
+};
+
+// const sayName = ({ name, age }: Person): Person => {
+//   console.log(name);
+//   return { name, age };
+// };
+
+sayName({
+  name: 'Mike',
+  age: 32,
+});
+
+sayName({
+  age: 32,
+  name: 'Mike',
+});
+
+sayName({
+  name: 'Mike',
+});
