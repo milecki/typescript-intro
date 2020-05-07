@@ -145,6 +145,29 @@ sayName({
 sayName({
     name: 'Mike'
 });
+// Enums
+// Numeric enum:
+var Type;
+(function (Type) {
+    Type[Type["Video"] = 0] = "Video";
+    Type[Type["BlogPost"] = 1] = "BlogPost";
+    Type[Type["Quiz"] = 2] = "Quiz";
+})(Type || (Type = {}));
+var createContent = function createContent(contentType) {};
+createContent(Type.Quiz);
+createContent(0);
+console.log(Type.Quiz);
+// String enum:
+var Type2;
+(function (Type2) {
+    Type2["Video"] = "VIDEO";
+    Type2["BlogPost"] = "BLOG_POST";
+    Type2["Quiz"] = "QUIZ";
+})(Type2 || (Type2 = {}));
+var createContent2 = function createContent2(contentType) {};
+createContent2(Type2.Quiz);
+// createContent2('QUIZ'); // not going to work
+console.log(Type2.Quiz);
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -174,7 +197,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '61610' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52276' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 

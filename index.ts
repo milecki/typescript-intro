@@ -122,3 +122,29 @@ sayName({
 sayName({
   name: 'Mike',
 });
+
+// Enums
+
+// Numeric enum:
+enum Type {
+  Video, // 0
+  BlogPost, // 1
+  Quiz, // 2
+}
+
+const createContent = (contentType: Type) => {};
+createContent(Type.Quiz);
+createContent(0);
+console.log(Type.Quiz);
+
+// String enum:
+enum Type2 {
+  Video = 'VIDEO',
+  BlogPost = 'BLOG_POST',
+  Quiz = 'QUIZ',
+}
+
+const createContent2 = (contentType: Type2) => {};
+createContent2(Type2.Quiz);
+// createContent2('QUIZ'); // not going to work
+console.log(Type2.Quiz);
