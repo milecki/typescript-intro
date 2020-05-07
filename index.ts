@@ -47,15 +47,49 @@ const homes: any = 3;
 
 // 4)
 // you can also use rest parameters
-const sayWord = (word = 'Hello', ...otherStuff: string[]): string => {
-  console.log(otherStuff);
-  return word;
-};
-sayWord('Mike', 'Lisa', 'Danny');
+// const sayWord = (word = 'Hello', ...otherStuff: string[]): string => {
+//   console.log(otherStuff);
+//   return word;
+// };
+// sayWord('Mike', 'Lisa', 'Danny');
 
-let newName = 'Mark';
-newName = 'Johnny';
-newName = 10;
-console.log(newName);
-let newNameTwo = newName;
-newNameTwo = 10;
+// Implicit Types in TS
+
+// let newName = 'Mark';
+// newName = 'Johnny';
+// newName = 10;
+// console.log(newName);
+
+// Gets type from initial declaration
+// let newNameTwo = newName;
+// newNameTwo = 10;
+
+// union types (with |)
+// the type here is one of three - string, number or boolean
+// let newName: string | number | boolean = 'Mark';
+// newName = 'Johnny';
+// newName = 10;
+// newName = false;
+// console.log(newName);
+
+// let newNameTwo = newName;
+// newNameTwo = 39;
+// console.log(newNameTwo);
+
+// union types in functions
+const makeMargin = (x: string | number): string => {
+  return `margin: ${x}px;`;
+};
+
+makeMargin(10);
+makeMargin('Miao');
+// makeMargin(true);
+
+// Null types (and undefined are automatically added to your standard types)
+let dog: string;
+dog = null;
+console.log('dog', dog);
+dog = 'Lucie';
+dog = undefined;
+dog = 10;
+dog = false;

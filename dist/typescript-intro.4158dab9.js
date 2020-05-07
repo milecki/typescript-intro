@@ -148,24 +148,44 @@ var homes = 3;
 // sayWord();
 // 4)
 // you can also use rest parameters
-var sayWord = function sayWord(word) {
-    if (word === void 0) {
-        word = 'Hello';
-    }
-    var otherStuff = [];
-    for (var _i = 1; _i < arguments.length; _i++) {
-        otherStuff[_i - 1] = arguments[_i];
-    }
-    console.log(otherStuff);
-    return word;
+// const sayWord = (word = 'Hello', ...otherStuff: string[]): string => {
+//   console.log(otherStuff);
+//   return word;
+// };
+// sayWord('Mike', 'Lisa', 'Danny');
+// Implicit Types in TS
+// let newName = 'Mark';
+// newName = 'Johnny';
+// newName = 10;
+// console.log(newName);
+// Gets type from initial declaration
+// let newNameTwo = newName;
+// newNameTwo = 10;
+// union types (with |)
+// the type here is one of three - string, number or boolean
+// let newName: string | number | boolean = 'Mark';
+// newName = 'Johnny';
+// newName = 10;
+// newName = false;
+// console.log(newName);
+// let newNameTwo = newName;
+// newNameTwo = 39;
+// console.log(newNameTwo);
+// union types in functions
+var makeMargin = function makeMargin(x) {
+    return "margin: " + x + "px;";
 };
-sayWord('Mike', 'Lisa', 'Danny');
-var newName = 'Mark';
-newName = 'Johnny';
-newName = 10;
-console.log(newName);
-var newNameTwo = newName;
-newNameTwo = 10;
+makeMargin(10);
+makeMargin('Miao');
+// makeMargin(true);
+// Null types (and undefined are automatically added to your standard types)
+var dog;
+dog = null;
+console.log('dog', dog);
+dog = 'Lucie';
+dog = undefined;
+dog = 10;
+dog = false;
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -195,7 +215,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55436' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '57130' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
