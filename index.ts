@@ -51,4 +51,11 @@ const sayWord = (word = 'Hello', ...otherStuff: string[]): string => {
   console.log(otherStuff);
   return word;
 };
-sayWord('Mike', 'Basia', 'Kasia');
+sayWord('Mike', 'Lisa', 'Danny');
+
+let newName = 'Mark';
+newName = 'Johnny';
+newName = 10;
+console.log(newName);
+let newNameTwo = newName;
+newNameTwo = 10;

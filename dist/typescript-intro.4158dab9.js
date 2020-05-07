@@ -159,7 +159,13 @@ var sayWord = function sayWord(word) {
     console.log(otherStuff);
     return word;
 };
-sayWord('Mike', 'Basia', 'Kasia');
+sayWord('Mike', 'Lisa', 'Danny');
+var newName = 'Mark';
+newName = 'Johnny';
+newName = 10;
+console.log(newName);
+var newNameTwo = newName;
+newNameTwo = 10;
 },{}],4:[function(require,module,exports) {
 var global = arguments[3];
 var OVERLAY_ID = '__parcel__error__overlay__';
@@ -189,7 +195,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = '' || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + '52778' + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + '55436' + '/');
   ws.onmessage = function (event) {
     var data = JSON.parse(event.data);
 
