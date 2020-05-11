@@ -95,56 +95,79 @@ const homes: any = 3;
 // dog = false;
 
 // Interfaces
-interface Person {
-  name: string;
-  age?: number; // optional param
-}
-const sayName = ({ name, age }: Person): string => {
-  console.log(name);
-  return name;
-};
+// interface Person {
+//   name: string;
+//   age?: number; // optional param
+// }
+// const sayName = ({ name, age }: Person): string => {
+//   console.log(name);
+//   return name;
+// };
 
 // const sayName = ({ name, age }: Person): Person => {
 //   console.log(name);
 //   return { name, age };
 // };
 
-sayName({
-  name: 'Mike',
-  age: 32,
-});
+// sayName({
+//   name: 'Mike',
+//   age: 32,
+// });
 
-sayName({
-  age: 32,
-  name: 'Mike',
-});
+// sayName({
+//   age: 32,
+//   name: 'Mike',
+// });
 
-sayName({
-  name: 'Mike',
-});
+// sayName({
+//   name: 'Mike',
+// });
 
 // Enums
 
 // Numeric enum:
-enum Type {
-  Video, // 0
-  BlogPost, // 1
-  Quiz, // 2
-}
+// enum Type {
+//   Video, // 0
+//   BlogPost, // 1
+//   Quiz, // 2
+// }
 
-const createContent = (contentType: Type) => {};
-createContent(Type.Quiz);
-createContent(0);
-console.log(Type.Quiz);
+// const createContent = (contentType: Type) => {};
+// createContent(Type.Quiz);
+// createContent(0);
+// console.log(Type.Quiz);
 
 // String enum:
-enum Type2 {
-  Video = 'VIDEO',
-  BlogPost = 'BLOG_POST',
-  Quiz = 'QUIZ',
+// enum Type2 {
+//   Video = 'VIDEO',
+//   BlogPost = 'BLOG_POST',
+//   Quiz = 'QUIZ',
+// }
+
+// const createContent2 = (contentType: Type2) => {};
+// createContent2(Type2.Quiz);
+// createContent2('QUIZ'); // not going to work
+// console.log(Type2.Quiz);
+
+// Classes
+
+class Team {
+  teamName: string;
+  // public teamName: string; // this is same as above
+  private teamName: string; // prevents outside usage
+  // readonly teamName: string; // prevents from being changed
+
+  constructor(teamName) {
+    this.teamName = teamName;
+  }
+  score(): string {
+    this.teamName = 'changing';
+    console.log('Gooooooal!');
+    console.log(this.teamName);
+    return 'goal';
+  }
 }
 
-const createContent2 = (contentType: Type2) => {};
-createContent2(Type2.Quiz);
-// createContent2('QUIZ'); // not going to work
-console.log(Type2.Quiz);
+const redWings = new Team('Red Wings');
+redWings.score();
+console.log(redWings.teamName);
