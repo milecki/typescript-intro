@@ -1,3 +1,5 @@
+import { Person } from './src/Interfaces';
+
 const isOpen: boolean = false;
 const myName: string = 'Scott';
 const myAge: number = 32;
@@ -95,24 +97,21 @@ const homes: any = 3;
 // dog = false;
 
 // Interfaces
-// interface Person {
-//   name: string;
-//   age?: number; // optional param
-// }
-// const sayName = ({ name, age }: Person): string => {
-//   console.log(name);
-//   return name;
-// };
+
+const sayName = ({ name, age }: Person): string => {
+  console.log(name);
+  return name;
+};
 
 // const sayName = ({ name, age }: Person): Person => {
 //   console.log(name);
 //   return { name, age };
 // };
 
-// sayName({
-//   name: 'Mike',
-//   age: 32,
-// });
+sayName({
+  name: 'Mike',
+  age: 32,
+});
 
 // sayName({
 //   age: 32,
@@ -151,23 +150,23 @@ const homes: any = 3;
 
 // Classes
 
-class Team {
-  teamName: string;
-  // public teamName: string; // this is same as above
-  private teamName: string; // prevents outside usage
-  // readonly teamName: string; // prevents from being changed
+// class Team {
+//   teamName: string;
+// public teamName: string; // this is same as above
+// private teamName: string; // prevents outside usage
+// readonly teamName: string; // prevents from being changed
 
-  constructor(teamName) {
-    this.teamName = teamName;
-  }
-  score(): string {
-    this.teamName = 'changing';
-    console.log('Gooooooal!');
-    console.log(this.teamName);
-    return 'goal';
-  }
-}
+//   constructor(teamName) {
+//     this.teamName = teamName;
+//   }
+//   score(): string {
+//     this.teamName = 'changing';
+//     console.log('Gooooooal!');
+//     console.log(this.teamName);
+//     return 'goal';
+//   }
+// }
 
-const redWings = new Team('Red Wings');
-redWings.score();
-console.log(redWings.teamName);
+// const redWings = new Team('Red Wings');
+// redWings.score();
+// console.log(redWings.teamName);
