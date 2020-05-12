@@ -98,20 +98,20 @@ const homes: any = 3;
 
 // Interfaces
 
-const sayName = ({ name, age }: Person): string => {
-  console.log(name);
-  return name;
-};
+// const sayName = ({ name, age }: Person): string => {
+//   console.log(name);
+//   return name;
+// };
 
 // const sayName = ({ name, age }: Person): Person => {
 //   console.log(name);
 //   return { name, age };
 // };
 
-sayName({
-  name: 'Mike',
-  age: 32,
-});
+// sayName({
+//   name: 'Mike',
+//   age: 32,
+// });
 
 // sayName({
 //   age: 32,
@@ -170,3 +170,11 @@ sayName({
 // const redWings = new Team('Red Wings');
 // redWings.score();
 // console.log(redWings.teamName);
+
+// Generics
+const outputInput = <T>(arg: T): T => {
+  return arg;
+};
+
+const output = outputInput('hi');
+outputInput(3);
