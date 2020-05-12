@@ -172,9 +172,25 @@ const homes: any = 3;
 // console.log(redWings.teamName);
 
 // Generics
-const outputInput = <T>(arg: T): T => {
-  return arg;
+// const outputInput = <T>(arg: T): T => {
+//   return arg;
+// };
+
+// const output = outputInput('hi');
+// outputInput(3);
+
+// Duck Typing
+
+class Dancer implements Person {
+  name: string;
+  age?: number;
+}
+
+let ElNino: Person = new Dancer();
+
+const fake = {
+  name: 'Mike',
+  year: 30,
 };
 
-const output = outputInput('hi');
-outputInput(3);
+ElNino = fake;
